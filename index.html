@@ -9,7 +9,6 @@
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet" />
-
   <!-- Icons -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
 
@@ -27,10 +26,7 @@
       --max-width: 960px;
     }
 
-    * {
-      box-sizing: border-box;
-    }
-
+    * { box-sizing: border-box; }
     body {
       margin: 0;
       font-family: 'Inter', sans-serif;
@@ -38,15 +34,8 @@
       color: var(--clr-text);
       line-height: 1.65;
     }
-
-    a {
-      color: var(--clr-primary);
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
+    a { color: var(--clr-primary); text-decoration: none; }
+    a:hover { text-decoration: underline; }
 
     header {
       background: url("./assets/images/banner.jpeg") no-repeat center center/cover;
@@ -56,21 +45,13 @@
       position: relative;
     }
 
-    header .profile-pic {
+    header img {
       width: 140px;
       height: 140px;
       border-radius: 50%;
       object-fit: cover;
-      border: 4px solid #ffffff;
-      position: absolute;
-      left: 50%;
-      bottom: -70px;
-      transform: translateX(-50%);
-      background: #fff;
-    }
-
-    header .info {
-      margin-top: 2rem;
+      border: 4px solid #fff;
+      margin-bottom: 1rem;
     }
 
     header h1 {
@@ -94,19 +75,12 @@
       font-size: 1.125rem;
     }
 
-    header .links a {
-      color: #fff;
-      transition: color 0.2s;
-    }
-
-    header .links a:hover {
-      color: var(--clr-accent);
-      text-decoration: none;
-    }
+    header .links a { color: #fff; transition: color 0.2s; }
+    header .links a:hover { color: var(--clr-accent); text-decoration: none; }
 
     main {
       max-width: var(--max-width);
-      margin: 5rem auto 4rem;
+      margin: 3rem auto 4rem;
       padding: 0 1rem;
     }
 
@@ -125,14 +99,8 @@
       font-weight: 700;
     }
 
-    ul {
-      margin: 0;
-      padding-left: 1.25rem;
-    }
-
-    li {
-      margin-bottom: 0.5rem;
-    }
+    ul { margin: 0; padding-left: 1.25rem; }
+    li { margin-bottom: 0.5rem; }
 
     .tags {
       display: flex;
@@ -149,53 +117,39 @@
       border-radius: 999px;
     }
 
-    .grid {
-      display: grid;
-      gap: 2rem;
-    }
+    .grid { display: grid; gap: 2rem; }
 
     @media (min-width: 768px) {
-      .grid {
-        grid-template-columns: 1fr 1fr;
-      }
+      .grid { grid-template-columns: 1fr 1fr; }
     }
 
     @media print {
-      body {
-        background: #fff;
-      }
-      header {
-        background: var(--clr-primary);
-        -webkit-print-color-adjust: exact;
-      }
-      .card {
-        box-shadow: none;
-        border: 1px solid #d1d5db;
-      }
+      body { background: #fff; }
+      header { background: var(--clr-primary); -webkit-print-color-adjust: exact; }
+      .card { box-shadow: none; border: 1px solid #d1d5db; }
     }
   </style>
 </head>
 
 <body>
   <header>
-    <img class="profile-pic" src="./assets/images/jackson.jpeg" alt="Portrait of Jackson Sin" />
-    <div class="info">
-      <h1>Jackson Sin</h1>
-      <p>Product Manager · GenAI, Cloud & Data</p>
-      <div class="links">
-        <a href="mailto:jackson.sin8888@gmail.com" aria-label="Email">
-          <i class="fa-solid fa-envelope"></i>
-        </a>
-        <a href="https://www.linkedin.com/in/jackson-sin" target="_blank" aria-label="LinkedIn">
-          <i class="fa-brands fa-linkedin"></i>
-        </a>
-        <a href="https://github.com/jacksonsin" target="_blank" aria-label="GitHub">
-          <i class="fa-brands fa-github"></i>
-        </a>
-      </div>
+    <img src="./assets/images/jackson.jpeg" alt="Portrait of Jackson Sin" />
+    <h1>Jackson Sin</h1>
+    <p>Product Manager · GenAI, Cloud & Data</p>
+    <div class="links">
+      <a href="mailto:jackson.sin8888@gmail.com" aria-label="Email">
+        <i class="fa-solid fa-envelope"></i>
+      </a>
+      <a href="https://www.linkedin.com/in/jackson-sin" target="_blank" aria-label="LinkedIn">
+        <i class="fa-brands fa-linkedin"></i>
+      </a>
+      <a href="https://github.com/jacksonsin" target="_blank" aria-label="GitHub">
+        <i class="fa-brands fa-github"></i>
+      </a>
     </div>
   </header>
 
+  <!-- Content sections below -->
   <main>
     <section class="card">
       <h2><i class="fa-solid fa-user-astronaut"></i> About</h2>

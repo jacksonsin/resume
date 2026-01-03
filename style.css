@@ -1,165 +1,38 @@
-/* 1. CSS Variables & Reset */
 :root {
   --clr-bg: #f5f7fa;
   --clr-card: #ffffff;
   --clr-primary: #005aa7;
-  --clr-primary-light: #0078d7;
   --clr-text: #1f2937;
   --clr-text-light: #6b7280;
-  --clr-accent: #0ea5e9;
   --radius: 8px;
   --shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
-  --max-width: 960px;
 }
 
-* {
-  box-sizing: border-box;
-}
+* { box-sizing: border-box; }
+body { margin: 0; font-family: 'Inter', sans-serif; background: var(--clr-bg); color: var(--clr-text); line-height: 1.4; }
 
-body {
-  margin: 0;
-  font-family: 'Inter', sans-serif;
-  background: var(--clr-bg);
-  color: var(--clr-text);
-  line-height: 1.5; /* Tightened line height */
-}
+header { position: relative; text-align: center; }
+.banner-box { width: 100%; max-height: 480px; overflow: hidden; }
+.banner-img { width: 100%; height: auto; display: block; object-fit: cover; }
+.header-content { max-width: 720px; margin: -100px auto 0; position: relative; z-index: 5; }
+.info-card { background: var(--clr-card); padding: 1.5rem; border-radius: var(--radius); box-shadow: var(--shadow); }
+.profile-wrapper { margin-top: -80px; margin-bottom: 0.5rem; }
+.profile-pic { width: 130px; height: 130px; border-radius: 50%; border: 5px solid #fff; box-shadow: var(--shadow); }
 
-/* 2. Header Section (Optimized for 1920x480) */
-header {
-  position: relative;
-  text-align: center;
-}
+h1, h2, h3, p { margin: 0; }
+h2 { color: var(--clr-primary); font-size: 1.3rem; margin-bottom: 0.8rem; }
+.card { background: #fff; padding: 1.5rem; margin-bottom: 1.2rem; border-radius: var(--radius); box-shadow: var(--shadow); }
 
-.banner-box {
-  width: 100%;
-  max-height: 480px; 
-  overflow: hidden;
-}
+.job-entry { margin-bottom: 1rem; }
+.job-entry h3 { font-size: 1.1rem; }
+.date { color: var(--clr-text-light); font-size: 0.85rem; font-weight: 600; margin-bottom: 0.1rem; }
+ul { padding-left: 1.2rem; }
+li { margin-bottom: 0.15rem; }
 
-.banner-img {
-  width: 100%;
-  height: auto;
-  display: block;
-  object-fit: cover;
-}
+.edu-entry { margin-bottom: 0.6rem; list-style: disc; }
+.edu-sub { color: var(--clr-text-light); font-size: 0.9rem; }
 
-.header-content {
-  max-width: 720px;
-  margin: -100px auto 0;
-  position: relative;
-  z-index: 5;
-}
-
-.info-card {
-  background: var(--clr-card);
-  padding: 2rem;
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
-}
-
-.profile-wrapper {
-  margin-top: -80px;
-  margin-bottom: 0.5rem;
-}
-
-.profile-pic {
-  width: 130px;
-  height: 130px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 5px solid #ffffff;
-  box-shadow: var(--shadow);
-}
-
-/* 3. Typography & Spacing (Removing Line Spaces) */
-h1, h2, h3, p {
-  margin: 0; /* Removing default margins to control spacing manually */
-}
-
-h2 {
-  color: var(--clr-primary);
-  font-size: 1.4rem;
-  margin-bottom: 1rem;
-}
-
-.card {
-  background: var(--clr-card);
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
-  padding: 1.5rem;
-  margin-bottom: 1.5rem;
-}
-
-/* Job Entry Spacing */
-.job-entry {
-  margin-bottom: 1.25rem;
-}
-
-.job-entry h3 {
-  font-size: 1.15rem;
-  color: var(--clr-text);
-  margin-bottom: 0; /* No space between title and date */
-}
-
-.date {
-  color: var(--clr-text-light);
-  font-size: 0.9rem;
-  font-weight: 600;
-  margin-bottom: 0.25rem; /* Small gap before bullets */
-}
-
-ul {
-  margin: 0;
-  padding-left: 1.2rem;
-}
-
-li {
-  margin-bottom: 0.2rem; /* Tighter list spacing */
-}
-
-/* Education Spacing */
-.edu-entry {
-  margin-bottom: 0.75rem;
-  list-style-type: disc;
-}
-
-.edu-sub {
-  color: var(--clr-text-light);
-  font-size: 0.9rem;
-  margin-top: 0; /* No space between degree and school */
-}
-
-/* 4. Components */
-.tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.4rem;
-  margin-top: 0.5rem;
-}
-
-.tag {
-  background: #e5eef9;
-  color: var(--clr-primary);
-  font-size: 0.8rem;
-  font-weight: 600;
-  padding: 0.3rem 0.7rem;
-  border-radius: 4px;
-}
-
-.grid {
-  display: grid;
-  gap: 1.5rem;
-}
-
-@media (min-width: 768px) {
-  .grid {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-
-footer {
-  text-align: center;
-  padding: 2rem;
-  color: var(--clr-text-light);
-  font-size: 0.85rem;
-}
+.tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.4rem; }
+.tag { background: #e5eef9; color: var(--clr-primary); font-size: 0.75rem; padding: 0.25rem 0.6rem; border-radius: 4px; font-weight: 600; }
+.grid { display: grid; gap: 1.2rem; }
+@media (min-width: 768px) { .grid { grid-template-columns: 1fr 1fr; } }

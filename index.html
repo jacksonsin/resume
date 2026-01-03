@@ -11,200 +11,10 @@
 
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
 
-  <style>
-    :root {
-      --clr-bg: #f5f7fa;
-      --clr-card: #ffffff;
-      --clr-primary: #005aa7;
-      --clr-primary-light: #0078d7;
-      --clr-text: #1f2937;
-      --clr-text-light: #6b7280;
-      --clr-accent: #0ea5e9;
-      --radius: 12px;
-      --shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
-      --max-width: 960px;
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
-    body {
-      margin: 0;
-      font-family: 'Inter', sans-serif;
-      background: var(--clr-bg);
-      color: var(--clr-text);
-      line-height: 1.65;
-    }
-
-    a {
-      color: var(--clr-primary);
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
-
-    /* --- Optimized Header & Banner --- */
-    header {
-      position: relative;
-      text-align: center;
-      background-color: #030a1a; /* Matches the dark IMDA banner theme */
-      overflow: hidden;
-    }
-
-    header .banner {
-      width: 100%;
-      height: auto;
-      /* Adjust ratio based on your actual banner image dimensions */
-      aspect-ratio: 16 / 4; 
-      object-fit: cover;
-      object-position: center;
-      display: block;
-    }
-
-    header .info {
-      background-color: #ffffff;
-      max-width: 720px;
-      width: 92%;
-      margin: -60px auto 0;
-      padding: 2.5rem 2rem 2rem;
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      position: relative;
-      z-index: 5;
-    }
-
-    .profile-pic {
-      width: 120px;
-      height: 120px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 5px solid #ffffff;
-      background: #fff;
-      margin: -90px auto 1rem;
-      position: relative;
-      z-index: 10;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    }
-
-    header h1 {
-      margin: 0;
-      font-size: 2.2rem;
-      font-weight: 700;
-      letter-spacing: -0.025em;
-    }
-
-    header p {
-      margin: 0.5rem 0 0;
-      font-size: 1.125rem;
-      color: var(--clr-text-light);
-    }
-
-    header .links {
-      margin-top: 1.25rem;
-      display: flex;
-      justify-content: center;
-      gap: 1.75rem;
-      font-size: 1.25rem;
-    }
-
-    header .links a {
-      color: var(--clr-primary);
-      transition: transform 0.2s, color 0.2s;
-    }
-
-    header .links a:hover {
-      color: var(--clr-accent);
-      transform: translateY(-2px);
-      text-decoration: none;
-    }
-
-    /* --- Main Content --- */
-    main {
-      max-width: var(--max-width);
-      margin: 3rem auto;
-      padding: 0 1rem;
-    }
-
-    .card {
-      background: var(--clr-card);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      padding: 2rem;
-      margin-bottom: 2rem;
-    }
-
-    h2 {
-      margin: 0 0 1.25rem;
-      color: var(--clr-primary);
-      font-size: 1.5rem;
-      font-weight: 700;
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-    }
-
-    ul {
-      margin: 0;
-      padding-left: 1.25rem;
-    }
-
-    li {
-      margin-bottom: 0.6rem;
-    }
-
-    .tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-      margin-top: 1rem;
-    }
-
-    .tag {
-      background: #e0f2fe;
-      color: var(--clr-primary);
-      font-size: 0.85rem;
-      font-weight: 600;
-      padding: 0.35rem 0.85rem;
-      border-radius: 999px;
-    }
-
-    .grid {
-      display: grid;
-      gap: 2rem;
-    }
-
-    @media (min-width: 768px) {
-      .grid {
-        grid-template-columns: 1fr 1fr;
-      }
-    }
-
-    /* Mobile Adjustments */
-    @media (max-width: 600px) {
-      header .info {
-        margin-top: -40px;
-        padding-top: 2rem;
-      }
-      .profile-pic {
-        width: 100px;
-        height: 100px;
-        margin-top: -75px;
-      }
-      header h1 {
-        font-size: 1.75rem;
-      }
-    }
-
-    @media print {
-      body { background: #fff; }
-      .card { box-shadow: none; border: 1px solid #eee; }
-      header { background: none; }
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
+
+
 
 <body>
   <header>
@@ -214,9 +24,15 @@
       <h1>Jackson Sin</h1>
       <p>Product Manager · GenAI, Cloud & Data</p>
       <div class="links">
-        <a href="mailto:jackson.sin8888@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
-        <a href="https://www.linkedin.com/in/jackson-sin" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
-        <a href="https://github.com/jacksonsin" target="_blank" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+        <a href="mailto:jackson.sin8888@gmail.com" aria-label="Email">
+          <i class="fa-solid fa-envelope"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/jackson-sin" target="_blank" aria-label="LinkedIn">
+          <i class="fa-brands fa-linkedin"></i>
+        </a>
+        <a href="https://github.com/jacksonsin" target="_blank" aria-label="GitHub">
+          <i class="fa-brands fa-github"></i>
+        </a>
       </div>
     </div>
   </header>
@@ -282,6 +98,7 @@
           <li><a href="https://github.com/jacksonsin/data_science_with_python/blob/main/Chatbot.ipynb" target="_blank">Q&A Chatbot (RAG)</a></li>
           <li><a href="https://github.com/jacksonsin/machine_learning_with_python/blob/main/Image%20Classification.ipynb" target="_blank">Image Classification</a></li>
           <li><a href="https://scratch.mit.edu/projects/729185742" target="_blank">Basketball ShootOut (Scratch Game)</a></li>
+          <li>Power BI / Tableau Dashboards (notebooks linked)</li>
         </ul>
         <div class="tags">
           <span class="tag">GenAI</span>
@@ -294,7 +111,7 @@
     </div>
   </main>
 
-  <footer style="text-align:center; padding: 2rem; color:#6b7280; font-size:0.875rem;">
+  <footer>
     © 2025 Jackson Sin
   </footer>
 </body>

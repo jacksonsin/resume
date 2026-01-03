@@ -1,23 +1,31 @@
+/* 1. Root Variables */
 :root {
   --clr-bg: #f8fafc;
-  --clr-header-dark: #030a1a; /* Matches your IMDA banner dark blue */
-  --clr-primary: #005aa7;
+  --clr-card: #ffffff;
+  --clr-primary: #005aa7; /* IMDA Branding Blue */
+  --clr-text: #1e293b;
+  --clr-text-light: #64748b;
+  --clr-accent: #0ea5e9;
   --radius: 12px;
-  --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  --shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+  --max-width: 900px;
 }
 
+/* 2. Global Resets */
+* { box-sizing: border-box; }
 body {
   margin: 0;
   font-family: 'Inter', sans-serif;
-  background-color: var(--clr-bg);
+  background: var(--clr-bg);
+  color: var(--clr-text);
+  line-height: 1.6;
 }
 
-/* --- Banner & Header Optimization --- */
+/* 3. Header & Optimized Banner */
 header {
-  background-color: var(--clr-header-dark);
-  width: 100%;
+  background-color: #030a1a; /* Dark background to blend with banner edges */
+  text-align: center;
   position: relative;
-  /* This prevents the "extra" black space below the header */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -25,69 +33,138 @@ header {
 
 .banner-box {
   width: 100%;
-  height: 300px; /* Adjust this to show more/less of the IMDA logo */
+  height: 280px; /* Controlled height to reduce empty space */
   overflow: hidden;
 }
 
 .banner-img {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Forces image to fill width/height without black gaps */
-  object-position: center right; /* Keeps the IMDA logo visible */
+  object-fit: cover; /* Ensures banner fills entire width without black bars */
+  object-position: center right; /* Keeps logo visible on smaller screens */
 }
 
 .header-content {
-  width: 100%;
-  max-width: 800px;
-  padding: 0 1rem;
-  margin-top: -80px; /* Pulls the white card up over the banner */
+  width: 92%;
+  max-width: 760px;
+  margin-top: -70px; /* Overlaps info card onto the banner */
   z-index: 10;
 }
 
 .info-card {
-  background: #ffffff;
+  background: var(--clr-card);
   border-radius: var(--radius);
-  padding: 2.5rem 1.5rem 1.5rem;
-  text-align: center;
+  padding: 3rem 2rem 2rem;
   box-shadow: var(--shadow);
+  position: relative;
 }
 
 .profile-wrapper {
-  margin-top: -110px; /* Adjust based on profile pic size */
-  margin-bottom: 1rem;
+  position: absolute;
+  top: -55px;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .profile-pic {
   width: 110px;
   height: 110px;
   border-radius: 50%;
-  border: 4px solid #ffffff;
+  border: 5px solid #ffffff;
   object-fit: cover;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
-/* --- Typography --- */
-h1 { margin: 0; font-size: 1.8rem; color: #1e293b; }
-p { margin: 0.5rem 0; color: #64748b; font-weight: 500; }
+h1 { margin: 0; font-size: 2rem; font-weight: 700; letter-spacing: -0.02em; }
+.info-card p { margin: 0.5rem 0 0; color: var(--clr-text-light); font-weight: 500; }
 
 .social-links {
-  margin-top: 1rem;
+  margin-top: 1.25rem;
   display: flex;
   justify-content: center;
-  gap: 1.25rem;
+  gap: 1.5rem;
 }
 
 .social-links a {
   color: var(--clr-primary);
-  font-size: 1.2rem;
-  transition: opacity 0.2s;
+  font-size: 1.3rem;
+  transition: transform 0.2s;
 }
 
-.social-links a:hover { opacity: 0.7; }
+.social-links a:hover { transform: translateY(-3px); color: var(--clr-accent); }
 
-/* --- Mobile Fixes --- */
+/* 4. Main Content Layout */
+main {
+  max-width: var(--max-width);
+  margin: 3rem auto;
+  padding: 0 1.5rem;
+}
+
+.card {
+  background: var(--clr-card);
+  border-radius: var(--radius);
+  padding: 2.2rem;
+  margin-bottom: 2rem;
+  box-shadow: var(--shadow);
+}
+
+h2 {
+  margin: 0 0 1.5rem;
+  color: var(--clr-primary);
+  font-size: 1.4rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+/* 5. Specific CV Components */
+.skills-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.skill-col h4 {
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  color: var(--clr-text-light);
+  letter-spacing: 0.05em;
+}
+
+.job-entry { margin-bottom: 2.5rem; }
+.job-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 0.75rem;
+}
+
+.job-header h3 { font-size: 1.15rem; margin: 0; }
+.date { font-size: 0.85rem; color: var(--clr-text-light); }
+
+ul { padding-left: 1.2rem; margin: 0; }
+li { margin-bottom: 0.6rem; }
+
+/* 6. Grid & Footer */
+.grid { display: grid; gap: 2rem; }
+
+footer {
+  text-align: center;
+  padding: 3rem;
+  color: var(--clr-text-light);
+  font-size: 0.85rem;
+}
+
+/* 7. Responsive Fixes */
+@media (min-width: 768px) {
+  .grid { grid-template-columns: 1fr 1fr; }
+}
+
 @media (max-width: 600px) {
   .banner-box { height: 180px; }
   .header-content { margin-top: -40px; }
-  .profile-pic { width: 90px; height: 90px; }
+  .skills-grid { grid-template-columns: 1fr; }
+  .job-header { flex-direction: column; gap: 0.25rem; }
+  h1 { font-size: 1.6rem; }
 }

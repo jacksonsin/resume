@@ -7,10 +7,8 @@
   <meta name="keywords" content="Jackson Sin, GenAI, Product Manager, Data Science, Singapore" />
   <title>Jackson Sin – Résumé</title>
 
-  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet" />
 
-  <!-- Icons -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
 
   <style>
@@ -22,8 +20,8 @@
       --clr-text: #1f2937;
       --clr-text-light: #6b7280;
       --clr-accent: #0ea5e9;
-      --radius: 8px;
-      --shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+      --radius: 12px;
+      --shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
       --max-width: 960px;
     }
 
@@ -48,23 +46,30 @@
       text-decoration: underline;
     }
 
+    /* --- Optimized Header & Banner --- */
     header {
       position: relative;
       text-align: center;
+      background-color: #030a1a; /* Matches the dark IMDA banner theme */
+      overflow: hidden;
     }
 
     header .banner {
       width: 100%;
-      max-height: 280px;
+      height: auto;
+      /* Adjust ratio based on your actual banner image dimensions */
+      aspect-ratio: 16 / 4; 
       object-fit: cover;
+      object-position: center;
       display: block;
     }
 
     header .info {
       background-color: #ffffff;
       max-width: 720px;
+      width: 92%;
       margin: -60px auto 0;
-      padding: 2rem;
+      padding: 2.5rem 2rem 2rem;
       border-radius: var(--radius);
       box-shadow: var(--shadow);
       position: relative;
@@ -76,17 +81,19 @@
       height: 120px;
       border-radius: 50%;
       object-fit: cover;
-      border: 4px solid #ffffff;
+      border: 5px solid #ffffff;
       background: #fff;
-      margin: -80px auto 1rem;
+      margin: -90px auto 1rem;
       position: relative;
       z-index: 10;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     }
 
     header h1 {
       margin: 0;
-      font-size: 2rem;
+      font-size: 2.2rem;
       font-weight: 700;
+      letter-spacing: -0.025em;
     }
 
     header p {
@@ -96,26 +103,28 @@
     }
 
     header .links {
-      margin-top: 1rem;
+      margin-top: 1.25rem;
       display: flex;
       justify-content: center;
-      gap: 1.5rem;
-      font-size: 1.125rem;
+      gap: 1.75rem;
+      font-size: 1.25rem;
     }
 
     header .links a {
       color: var(--clr-primary);
-      transition: color 0.2s;
+      transition: transform 0.2s, color 0.2s;
     }
 
     header .links a:hover {
       color: var(--clr-accent);
+      transform: translateY(-2px);
       text-decoration: none;
     }
 
+    /* --- Main Content --- */
     main {
       max-width: var(--max-width);
-      margin: 4rem auto;
+      margin: 3rem auto;
       padding: 0 1rem;
     }
 
@@ -128,10 +137,13 @@
     }
 
     h2 {
-      margin: 0 0 1rem;
+      margin: 0 0 1.25rem;
       color: var(--clr-primary);
       font-size: 1.5rem;
       font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
     }
 
     ul {
@@ -140,21 +152,22 @@
     }
 
     li {
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.6rem;
     }
 
     .tags {
       display: flex;
       flex-wrap: wrap;
       gap: 0.5rem;
-      margin-top: 0.75rem;
+      margin-top: 1rem;
     }
 
     .tag {
-      background: var(--clr-primary-light);
-      color: #fff;
-      font-size: 0.8rem;
-      padding: 0.35rem 0.75rem;
+      background: #e0f2fe;
+      color: var(--clr-primary);
+      font-size: 0.85rem;
+      font-weight: 600;
+      padding: 0.35rem 0.85rem;
       border-radius: 999px;
     }
 
@@ -169,17 +182,26 @@
       }
     }
 
+    /* Mobile Adjustments */
+    @media (max-width: 600px) {
+      header .info {
+        margin-top: -40px;
+        padding-top: 2rem;
+      }
+      .profile-pic {
+        width: 100px;
+        height: 100px;
+        margin-top: -75px;
+      }
+      header h1 {
+        font-size: 1.75rem;
+      }
+    }
+
     @media print {
-      body {
-        background: #fff;
-      }
-      header {
-        -webkit-print-color-adjust: exact;
-      }
-      .card {
-        box-shadow: none;
-        border: 1px solid #d1d5db;
-      }
+      body { background: #fff; }
+      .card { box-shadow: none; border: 1px solid #eee; }
+      header { background: none; }
     }
   </style>
 </head>
@@ -192,15 +214,9 @@
       <h1>Jackson Sin</h1>
       <p>Product Manager · GenAI, Cloud & Data</p>
       <div class="links">
-        <a href="mailto:jackson.sin8888@gmail.com" aria-label="Email">
-          <i class="fa-solid fa-envelope"></i>
-        </a>
-        <a href="https://www.linkedin.com/in/jackson-sin" target="_blank" aria-label="LinkedIn">
-          <i class="fa-brands fa-linkedin"></i>
-        </a>
-        <a href="https://github.com/jacksonsin" target="_blank" aria-label="GitHub">
-          <i class="fa-brands fa-github"></i>
-        </a>
+        <a href="mailto:jackson.sin8888@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+        <a href="https://www.linkedin.com/in/jackson-sin" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+        <a href="https://github.com/jacksonsin" target="_blank" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
       </div>
     </div>
   </header>
@@ -266,7 +282,6 @@
           <li><a href="https://github.com/jacksonsin/data_science_with_python/blob/main/Chatbot.ipynb" target="_blank">Q&A Chatbot (RAG)</a></li>
           <li><a href="https://github.com/jacksonsin/machine_learning_with_python/blob/main/Image%20Classification.ipynb" target="_blank">Image Classification</a></li>
           <li><a href="https://scratch.mit.edu/projects/729185742" target="_blank">Basketball ShootOut (Scratch Game)</a></li>
-          <li>Power BI / Tableau Dashboards (notebooks linked)</li>
         </ul>
         <div class="tags">
           <span class="tag">GenAI</span>
@@ -279,7 +294,7 @@
     </div>
   </main>
 
-  <footer style="text-align:center; padding: 1.5rem; color:#6b7280; font-size:0.875rem;">
+  <footer style="text-align:center; padding: 2rem; color:#6b7280; font-size:0.875rem;">
     © 2025 Jackson Sin
   </footer>
 </body>

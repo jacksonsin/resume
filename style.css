@@ -1,4 +1,4 @@
-/* 1. Root Variables */
+/* 1. Variables & Root */
 :root {
   --clr-bg: #f8fafc;
   --clr-card: #ffffff;
@@ -20,7 +20,7 @@ body {
   line-height: 1.6;
 }
 
-/* 3. Header & Banner (Eliminates Black Bars) */
+/* 3. Optimized Banner (Eliminates Black Bars) */
 header {
   background-color: #030a1a; /* Matches banner dark theme */
   text-align: center;
@@ -39,8 +39,8 @@ header {
 .banner-img {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Crops image to fill container width perfectly */
-  object-position: center right; /* Keeps logo/branding visible */
+  object-fit: cover; /* Forces image to fill entire container width/height */
+  object-position: center right; /* Keeps branding visible on all screens */
 }
 
 .header-content {
@@ -74,7 +74,8 @@ header {
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
-h1 { margin: 0; font-size: 2rem; font-weight: 700; letter-spacing: -0.02em; }
+/* 4. Typography & Layout */
+h1 { margin: 0; font-size: 2rem; font-weight: 700; }
 .info-card p { margin: 0.5rem 0 0; color: var(--clr-text-light); font-weight: 500; }
 
 .social-links {
@@ -90,41 +91,9 @@ h1 { margin: 0; font-size: 2rem; font-weight: 700; letter-spacing: -0.02em; }
   transition: transform 0.2s;
 }
 
-.social-links a:hover { transform: translateY(-3px); color: #0ea5e9; }
+.social-links a:hover { transform: translateY(-3px); }
 
-/* 4. Skills Stack */
-.skills-container {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-}
-
-.skill-category h4 {
-  margin: 0 0 0.75rem;
-  font-size: 0.95rem;
-  color: var(--clr-primary);
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-}
-
-.tag {
-  background: #f1f5f9;
-  color: #475569;
-  font-size: 0.75rem;
-  font-weight: 600;
-  padding: 0.4rem 0.8rem;
-  border-radius: 6px;
-  border: 1px solid #e2e8f0;
-}
-
-/* 5. Experience & Layout */
+/* 5. Expert Tech Stack */
 main {
   max-width: var(--max-width);
   margin: 3rem auto;
@@ -139,51 +108,39 @@ main {
   box-shadow: var(--shadow);
 }
 
-h2 {
-  margin: 0 0 1.5rem;
-  color: var(--clr-primary);
-  font-size: 1.4rem;
+h2 { margin: 0 0 1.5rem; color: var(--clr-primary); font-size: 1.4rem; }
+
+.skills-container { display: flex; flex-direction: column; gap: 1.5rem; }
+.skill-category h4 { margin: 0 0 0.75rem; font-size: 0.95rem; color: var(--clr-primary); }
+
+.tags { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.tag {
+  background: #f1f5f9;
+  color: #475569;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+  border: 1px solid #e2e8f0;
 }
 
-.job-entry {
-  margin-bottom: 2rem;
-  border-bottom: 1px solid #f1f5f9;
-  padding-bottom: 1.5rem;
-}
-
+/* 6. Professional Experience */
+.job-entry { margin-bottom: 2rem; border-bottom: 1px solid #f1f5f9; padding-bottom: 1.5rem; }
 .job-entry:last-child { border-bottom: none; }
+.job-header { display: flex; justify-content: space-between; align-items: baseline; }
+.job-header h3 { font-size: 1.15rem; margin: 0; }
+.date { font-size: 0.85rem; color: var(--clr-text-light); }
 
-.job-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  margin-bottom: 0.8rem;
-}
-
-.job-header h3 { font-size: 1.15rem; margin: 0; color: #0f172a; }
-.date { font-size: 0.85rem; color: var(--clr-text-light); font-weight: 500; }
-
-ul { padding-left: 1.25rem; margin: 0; }
+ul { padding-left: 1.25rem; margin: 0.5rem 0 0; }
 li { margin-bottom: 0.6rem; }
 
-/* 6. Grid & Footer */
+/* 7. Footer & Responsive */
 .grid { display: grid; gap: 2rem; }
+footer { text-align: center; padding: 3rem; color: var(--clr-text-light); font-size: 0.85rem; }
 
-footer {
-  text-align: center;
-  padding: 3rem;
-  color: var(--clr-text-light);
-  font-size: 0.85rem;
-}
-
-/* 7. Responsive Styles */
-@media (min-width: 768px) {
-  .grid { grid-template-columns: 1fr 1fr; }
-}
-
+@media (min-width: 768px) { .grid { grid-template-columns: 1fr 1fr; } }
 @media (max-width: 600px) {
   .banner-box { height: 180px; }
   .header-content { margin-top: -40px; }
-  .job-header { flex-direction: column; gap: 0.25rem; }
-  h1 { font-size: 1.6rem; }
+  .job-header { flex-direction: column; }
 }

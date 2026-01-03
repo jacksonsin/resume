@@ -21,162 +21,145 @@ body {
   font-family: 'Inter', sans-serif;
   background: var(--clr-bg);
   color: var(--clr-text);
-  line-height: 1.65;
+  line-height: 1.5; /* Tightened line height */
 }
 
-/* 2. Global Elements */
-a {
-  color: var(--clr-primary);
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: underline;
-}
-
-h2 {
-  margin: 0 0 1rem;
-  color: var(--clr-primary);
-  font-size: 1.5rem;
-  font-weight: 700;
-}
-
-ul {
-  margin: 0;
-  padding-left: 1.25rem;
-}
-
-li {
-  margin-bottom: 0.5rem;
-}
-
-/* 3. Header Section */
+/* 2. Header Section (Optimized for 1920x480) */
 header {
   position: relative;
   text-align: center;
 }
 
-header .banner {
+.banner-box {
   width: 100%;
-  /* Updated max-height to match the new 1920x480 resolution */
   max-height: 480px; 
-  object-fit: cover;
-  display: block;
+  overflow: hidden;
 }
 
-header .info {
-  background-color: #ffffff;
+.banner-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+.header-content {
   max-width: 720px;
-  /* Adjusted margin to keep the card overlapping the taller banner nicely */
-  margin: -80px auto 0; 
-  padding: 2rem;
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
+  margin: -100px auto 0;
   position: relative;
   z-index: 5;
 }
 
+.info-card {
+  background: var(--clr-card);
+  padding: 2rem;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.profile-wrapper {
+  margin-top: -80px;
+  margin-bottom: 0.5rem;
+}
+
 .profile-pic {
-  width: 120px;
-  height: 120px;
+  width: 130px;
+  height: 130px;
   border-radius: 50%;
   object-fit: cover;
-  border: 4px solid #ffffff;
-  background: #fff;
-  margin: -80px auto 1rem;
-  position: relative;
-  z-index: 10;
+  border: 5px solid #ffffff;
+  box-shadow: var(--shadow);
 }
 
-header h1 {
-  margin: 0;
-  font-size: 2rem;
-  font-weight: 700;
+/* 3. Typography & Spacing (Removing Line Spaces) */
+h1, h2, h3, p {
+  margin: 0; /* Removing default margins to control spacing manually */
 }
 
-header p {
-  margin: 0.5rem 0 0;
-  font-size: 1.125rem;
-  color: var(--clr-text-light);
-}
-
-header .links {
-  margin-top: 1rem;
-  display: flex;
-  justify-content: center;
-  gap: 1.5rem;
-  font-size: 1.125rem;
-}
-
-header .links a {
+h2 {
   color: var(--clr-primary);
-  transition: color 0.2s;
-}
-
-header .links a:hover {
-  color: var(--clr-accent);
-  text-decoration: none;
-}
-
-/* 4. Layout & Cards */
-main {
-  max-width: var(--max-width);
-  margin: 4rem auto;
-  padding: 0 1rem;
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
 }
 
 .card {
   background: var(--clr-card);
   border-radius: var(--radius);
   box-shadow: var(--shadow);
-  padding: 2rem;
-  margin-bottom: 2rem;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Job Entry Spacing */
+.job-entry {
+  margin-bottom: 1.25rem;
+}
+
+.job-entry h3 {
+  font-size: 1.15rem;
+  color: var(--clr-text);
+  margin-bottom: 0; /* No space between title and date */
+}
+
+.date {
+  color: var(--clr-text-light);
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 0.25rem; /* Small gap before bullets */
+}
+
+ul {
+  margin: 0;
+  padding-left: 1.2rem;
+}
+
+li {
+  margin-bottom: 0.2rem; /* Tighter list spacing */
+}
+
+/* Education Spacing */
+.edu-entry {
+  margin-bottom: 0.75rem;
+  list-style-type: disc;
+}
+
+.edu-sub {
+  color: var(--clr-text-light);
+  font-size: 0.9rem;
+  margin-top: 0; /* No space between degree and school */
+}
+
+/* 4. Components */
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 0.5rem;
+}
+
+.tag {
+  background: #e5eef9;
+  color: var(--clr-primary);
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 0.3rem 0.7rem;
+  border-radius: 4px;
 }
 
 .grid {
   display: grid;
-  gap: 2rem;
+  gap: 1.5rem;
 }
 
-/* 5. Components (Tags) */
-.tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  margin-top: 0.75rem;
-}
-
-.tag {
-  background: var(--clr-primary-light);
-  color: #fff;
-  font-size: 0.8rem;
-  padding: 0.35rem 0.75rem;
-  border-radius: 999px;
-}
-
-footer {
-  text-align: center;
-  padding: 1.5rem;
-  color: var(--clr-text-light);
-  font-size: 0.875rem;
-}
-
-/* 6. Responsive & Print */
 @media (min-width: 768px) {
   .grid {
     grid-template-columns: 1fr 1fr;
   }
 }
 
-@media print {
-  body {
-    background: #fff;
-  }
-  header {
-    -webkit-print-color-adjust: exact;
-  }
-  .card {
-    box-shadow: none;
-    border: 1px solid #d1d5db;
-  }
+footer {
+  text-align: center;
+  padding: 2rem;
+  color: var(--clr-text-light);
+  font-size: 0.85rem;
 }
